@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\LettersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\KataDniController;
 
-Route::get('/assign/{id}',[KataDniController::class, 'assignLetterToNumber'])->name('apiassign');
+Route::get('/assign/{id}',[LettersController::class, 'assignLetterToNumber'])->name('apiassign');

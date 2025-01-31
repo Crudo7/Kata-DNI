@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Letter;
 use Illuminate\Http\Request;
 
-class KataDniController extends Controller
+class LettersController extends Controller
 {
     
         function assignLetterToNumber($numChain)
