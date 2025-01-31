@@ -2,64 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\KataDni;
+use App\Models\Letter;
 use Illuminate\Http\Request;
 
 class KataDniController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    
+        function assignLetterToNumber($numChain)
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(KataDni $kataDni)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(KataDni $kataDni)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, KataDni $kataDni)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(KataDni $kataDni)
-    {
-        //
+        if (strlen($numChain) != 8) {
+            return "Introduce 8 numbers";
+        }
+    
+        $mod = (int)$numChain % 23;
+        $letter = Letter::find($mod + 1);
+    
+        return $numChain . $letter->letter;
     }
 }
